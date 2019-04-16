@@ -1,3 +1,5 @@
+// David Devore
+
 #include "person.cpp"
 #include <iostream>
 #include <fstream>
@@ -49,14 +51,7 @@ void readData(vector <Person> &employees){
     inFile >> hours;
     inFile >> pay;
 
-    person.setFirstName(fName);
-    person.setLastName(lName);
-    person.setEmployeeId(id);
-    person.setCompanyName(cName);
-    person.setHoursWorked(hours);
-    person.setPayRate(pay);
-
-    employees.push_back(person);
+    employees.emplace_back(fName, lName, id, cName, hours, pay);
 
     inFile >> fName;
   };
@@ -139,7 +134,7 @@ void separateAndSave(vector <Person> &employees, vector <string> &companyNames){
           outfiles[i] << setw(15) << person.getCompanyName();
           outfiles[i] << "$" << person.totalPay();
           outfiles[i] << "\n";
-// Tracks a companies' total pay 
+// Tracks a companies' total pay
           total[i] += person.totalPay();
         };
 
