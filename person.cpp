@@ -1,15 +1,25 @@
+// David Devore
+
 #include "person.h"
 
 
-Person::Person (){
-  string firstName;
-  string lastName;
-  int    employeeID;
-  string companyName;
-  float  hoursWorked;
-  float  payRate;
+Person::Person(){
+  firstName;
+  lastName;
+  employeeID;
+  companyName;
+  hoursWorked;
+  payRate;
 }
-
+Person::Person(string fName, string lName, int id, string comName,
+    float hours, float rate){
+      firstName = fName;
+      lastName = lName;
+      employeeID = id;
+      companyName = comName;
+      hoursWorked = hours;
+      payRate = rate;
+    }
 void Person::setFirstName(string fName){ firstName = fName;}
 string Person::getFirstName(){return firstName;}
 

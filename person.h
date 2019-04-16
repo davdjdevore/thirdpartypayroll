@@ -1,3 +1,4 @@
+// David Devore
 //begin person.h
 #ifndef PERSON_H
 #define PERSON_H
@@ -17,6 +18,8 @@ class Person{
 
   public:
       Person();
+      Person(string fName, string lName, int id, string comName,
+          float hours, float rate);
       void   setFirstName(string fName);
       string getFirstName();
       void   setLastName(string lName);
